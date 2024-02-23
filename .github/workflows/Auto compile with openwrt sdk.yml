@@ -254,6 +254,7 @@ jobs:
           file_name=$(echo ${{matrix.url_sdk}} | awk -F/ '{print $NF}')
           mkdir sdk && tar -xJf $file_name -C ./sdk --strip-components=1
           cd sdk
+          df -hT
 
       - name: SSH connection to Actions
         uses: mxschmitt/action-tmate@v3.13
